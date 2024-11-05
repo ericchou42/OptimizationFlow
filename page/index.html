@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>測試總頁</title>
+</head>
+<body>
+
+    <h1>條碼產生</h1>
+    <barcode>123456789</barcode>
+    <h1>輸入</h1>
+    
+    <!-- 輸入框讓使用者可以輸入一些資料 -->
+    <input type="text" id="userInput" placeholder="請輸入資料進資料庫">
+    <button onclick="sendData()">輸入</button>
+    
+    <div id="result"></div>
+
+    <h2>查詢</h2>
+    <form id="queryForm">
+        <label for="id">輸入 ID 查詢資料：</label>
+        <input type="test" id="id" name="id" required placeholder="請輸入ID">
+        <button onclick="fetchDataById()">查詢</button>
+    </form>
+    
+    <div id="result_search"></div>
+
+    <h2>上傳 Excel 檔案進資料庫</h2>
+    
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="file" name="file" accept=".xls,.xlsx" required>
+        <button type="submit">上傳</button>
+    </form>
+
+    <div id="result_file"></div>
+
+    <!-- 引入 JavaScript 文件 -->
+    <script src="script.js"></script>
+</body>
+</html>
