@@ -1,3 +1,22 @@
+## 前端
+```mermaid
+graph LR;
+
+A[產品投入]
+B[清洗機<br>清洗]
+C[脫油機<br>脫油]
+D[秤重]
+E[列印標籤]
+
+A --> |列印barcode|B
+B --> |掃描barcode|C
+C --> |掃描barcode|D
+D --> |掃描barcode|E
+```
+```
+使用說明：換行<br>、直式TD
+```
+[Markdown 教學](https://gist.github.com/christech1117/6dc5221c177104990767d6490ad8c7ba)
 # OptimizationFlow
 - **author:`Eric`**
 
