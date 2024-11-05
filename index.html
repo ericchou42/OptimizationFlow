@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>測試總頁</title>
+</head>
+<body>
+    <h2>使用者登入</h2>
+    <form id="queryForm">
+        <!-- <label for="id">使用者登入</label> -->
+        <input type="test" id="id" name="id" required placeholder="請輸入使用者名稱">
+        <input type="test" id="id" name="id" required placeholder="請輸入使用者密碼">
+        <button onclick="sendData()">送出</button>
+    </form>
+
+    <!-- 原視窗打開 -->
+    <select style="width:180px" onchange="location.href=this.options[this.selectedIndex].value">
+        <option value="" disabled="" selected="">請選擇網站</option>
+            <optgroup label="流程">
+            <option value="/page">測試總頁</option>
+            <option value="/清洗">清洗</option>
+            <option value="/脫油">脫油</option>
+            <option value="/秤重">秤重</option>
+            <option value="/輸入">輸入</option>
+            <option value="/輸出">輸出</option>
+    </select>
+
+    <!-- 引入 JavaScript 文件 -->
+    <script src="script.js"></script>
+</body>
+</html>
