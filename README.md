@@ -1,3 +1,22 @@
+## 前端
+```mermaid
+graph LR;
+
+A[產品投入]
+B[清洗機<br>清洗]
+C[脫油機<br>脫油]
+D[秤重]
+E[列印標籤]
+
+A --> |列印barcode|B
+B --> |掃描barcode|C
+C --> |掃描barcode|D
+D --> |掃描barcode|E
+```
+```
+使用說明：換行<br>、直式TD
+```
+[Markdown 教學](https://gist.github.com/christech1117/6dc5221c177104990767d6490ad8c7ba)
 # OptimizationFlow
 - **author:`Eric`**
 
@@ -24,4 +43,13 @@ subject（必要）：commit 的簡短描述
 不超過 50 個字元
 結尾不加句號
 盡量讓 Commit 單一化，一次只更動一個主題
+```
+
+[MySQL](https://note.drx.tw/2012/12/mysql-syntax.html)
+```
+常用資料庫資料型態
+1. INT (整數)
+2. CHAR (1~255字元字串)
+3. VARCHAR (不超過255字元不定長度字串)
+4. TEXT (不定長度字串最多65535字元)
 ```
