@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>測試總頁</title>
+</head>
+<body>
+    <h2>上傳 Excel 檔案進資料庫</h2>
+    
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="file" name="file" accept=".xls,.xlsx" required>
+        <button type="submit">上傳</button>
+    </form>
+
+    <div id="result_file"></div>
+
+    <!-- 引入 JavaScript 文件 -->
+    <script src="script.js"></script>
+</body>
+</html>

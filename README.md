@@ -56,7 +56,7 @@ composer require ramsey/uuid
 ```
 Message Header: <type>(<scope>): <subject>
 type（必要）：commit 的類別
-如：feat, fix, docs, style, refactor, test, chore
+如：feat(生成), fix(修改), wip(半成品), docs, style, refactor, test, chore
 scope（可選）：commit 影響的範圍
 如：資料庫、控制層、模板層等，視專案不同改變
 subject（必要）：commit 的簡短描述
