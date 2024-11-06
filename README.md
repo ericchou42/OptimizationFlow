@@ -44,3 +44,12 @@ subject（必要）：commit 的簡短描述
 結尾不加句號
 盡量讓 Commit 單一化，一次只更動一個主題
 ```
+
+[MySQL](https://note.drx.tw/2012/12/mysql-syntax.html)
+```
+常用資料庫資料型態
+1. INT (整數)
+2. CHAR (1~255字元字串)
+3. VARCHAR (不超過255字元不定長度字串)
+4. TEXT (不定長度字串最多65535字元)
+```
