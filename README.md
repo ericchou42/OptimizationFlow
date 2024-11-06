@@ -8,6 +8,7 @@ C[脫油機<br>脫油]
 D[秤重]
 E[列印標籤]
 
+
 A --> |列印barcode|B
 B --> |掃描barcode|C
 C --> |掃描barcode|D
@@ -15,28 +16,35 @@ D --> |掃描barcode|E
 ```
 ## 技術
 ```mermaid
-graph TD;
-
-A[現場]
-subgraph "流程"
-    B[流程A網站]
-    C[流程B網站]
+graph LR;
+subgraph "網站"
+    B
+    E
+    F
 end
-D[資料庫]
-E[barcord]
 
-A --> |掃描barcord|B
-B --> |後端帶A流程資料|D
-A --> |掃描barcord|C
-C --> |後端帶B流程資料|D
-D --> |回傳對應的資料列|B
-D --> |回傳對應的資料列|C
-D --> |列印|E
+A[成品部]
+B[barcode網站]
+C[資料庫]
+D[生產負責]
+E[流程網站A<br>顯示]
+F[流程網站B]
+G[印製機]
+
+A-->|生產文件|B
+B-->|輸入資料|C
+D-->|掃描barcord|E
+D-->|掃描barcord|F
+F<-->|更新資料<br>回傳資料|C
+E<-->|更新資料<br>回傳資料|C
+C-->|印製|G
 ```
 ```
 使用說明：換行<br>、直式TD
 ```
 [Markdown 教學](https://gist.github.com/christech1117/6dc5221c177104990767d6490ad8c7ba)
+
+[VScode 套件:Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
 # OptimizationFlow
 - **author:`Eric`**
 
@@ -56,7 +64,7 @@ composer require ramsey/uuid
 ```
 Message Header: <type>(<scope>): <subject>
 type（必要）：commit 的類別
-如：feat(生成), fix(修改), wip(半成品), docs, style, refactor, test, chore
+如：feat, fix, docs, style, refactor, test, chore
 scope（可選）：commit 影響的範圍
 如：資料庫、控制層、模板層等，視專案不同改變
 subject（必要）：commit 的簡短描述
