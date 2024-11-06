@@ -39,8 +39,8 @@ function sendData() {
 
 // 定義查詢函式
 function fetchDataById(uuid) {
-    // 顯示查詢中的訊息
-    document.getElementById("result").innerHTML = "查詢中，請稍候...";
+    // // 顯示查詢中的訊息
+    // document.getElementById("result").innerHTML = "查詢中，請稍候...";
 
     // 發送查詢請求到後端
     fetch("process.php", {
