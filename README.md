@@ -1,4 +1,4 @@
-## 前端
+## 需求
 ```mermaid
 graph LR;
 
@@ -12,6 +12,26 @@ A --> |列印barcode|B
 B --> |掃描barcode|C
 C --> |掃描barcode|D
 D --> |掃描barcode|E
+```
+## 技術
+```mermaid
+graph TD;
+
+A[現場]
+subgraph "流程"
+    B[流程A網站]
+    C[流程B網站]
+end
+D[資料庫]
+E[barcord]
+
+A --> |掃描barcord|B
+B --> |後端帶A流程資料|D
+A --> |掃描barcord|C
+C --> |後端帶B流程資料|D
+D --> |回傳對應的資料列|B
+D --> |回傳對應的資料列|C
+D --> |列印|E
 ```
 ```
 使用說明：換行<br>、直式TD
