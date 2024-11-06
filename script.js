@@ -12,29 +12,30 @@ function sendData() {
     // 取得使用者輸入的內容
     const userInput = document.getElementById('userInput').value;
 
-    // 創建一個新的 XMLHttpRequest 物件
-    const xhr = new XMLHttpRequest();
-
-    // 設定請求類型為 POST，並指定目標 URL（process.php）
-    xhr.open('POST', 'process.php', true);
-
-    // 設置請求頭，告訴伺服器這是一個表單資料的請求
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-    // 定義當請求完成時的處理邏輯
-    xhr.onload = function() {
-        // 當狀態為 200 時，表示請求成功
-        if (xhr.status === 200) {
-            // 將伺服器的響應顯示在前端
-            document.getElementById('result').innerHTML = xhr.responseText;
+    // 使用 fetch API 發送 POST 請求
+    fetch('process.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `input=${encodeURIComponent(userInput)}`, // 將使用者輸入的資料作為參數傳遞
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.text(); // 解析回傳的文本
         } else {
-            // 錯誤處理
-            document.getElementById('result').innerHTML = '發生錯誤';
+            throw new Error('發生錯誤');
         }
-    };
-
-    // 發送請求，並將使用者輸入的資料（userInput）作為參數傳遞
-    xhr.send('input=' + encodeURIComponent(userInput));
+    })
+    .then(data => {
+        // 將伺服器的響應顯示在前端
+        document.getElementById('result').innerHTML = data;
+    })
+    .catch(error => {
+        // 錯誤處理
+        console.error('錯誤:', error);
+        document.getElementById('result').innerHTML = '發生錯誤';
+    });
 }
 
 // 定義查詢函式

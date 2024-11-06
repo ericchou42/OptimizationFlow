@@ -96,9 +96,7 @@ if (isset($_FILES['file'])) {
         $stmt->execute();
     }
     echo "資料成功上傳！";
-} else {
-    echo "沒有上傳任何文件。";
-}
+} 
 
 // 關閉資料庫連線
 $conn->close();
