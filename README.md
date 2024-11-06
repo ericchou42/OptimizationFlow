@@ -44,7 +44,10 @@ C-->|印製|G
 ```
 [Markdown 教學](https://gist.github.com/christech1117/6dc5221c177104990767d6490ad8c7ba)
 
-[VScode 套件:Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
+[VScode 套件:Markdown Preview Mermaid Support教學](https://aa333536.pixnet.net/blog/post/119862210)
+```
+command + k ,v
+```
 # OptimizationFlow
 - **author:`Eric`**
 

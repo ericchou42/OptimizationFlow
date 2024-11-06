@@ -6,10 +6,21 @@ CREATE TABLE test1_data (
     uuid CHAR(36) NOT NULL,
     -- 日期、時間
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    -- 生產單位
+    -- 工單號
     -- 品項名稱
     project_name VARCHAR(255) NOT NULL,
-    -- 數量
-    quantity INT(100) NOT NULL,
+    -- 車台
+    -- 工序
+    -- 改車人員
+    -- 顧車人員
+    -- 單重
+    -- 淨重
+    -- 數量(計算)
+    quantity INT NOT NULL,
+    -- 作業員
+    -- 箱數
+    
     -- 料號
     -- 檢查人員
     -- 後續單位

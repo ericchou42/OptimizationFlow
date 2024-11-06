@@ -50,9 +50,7 @@ if (isset($_POST['input'])) {
     } else {
         echo "目前沒有資料。";
     }
-} else {
-    echo "沒有接收到任何資料。";
-}
+} else
 
 if (isset($_POST['uuid'])) {
     $uuid = $_POST['uuid'];
@@ -71,9 +69,7 @@ if (isset($_POST['uuid'])) {
         echo "找不到指定 UUID 的資料。";
     }
     $stmt->close();
-} else {
-    echo "請輸入有效的 UUID。";
-}
+} else 
 
 // 檢查是否有文件上傳
 if (isset($_FILES['file'])) {
@@ -95,9 +91,7 @@ if (isset($_FILES['file'])) {
         $stmt->execute();
     }
     echo "資料成功上傳！";
-} else {
-    echo "沒有上傳任何文件。";
-}
+} else
 
 // 關閉資料庫連線
 $conn->close();
