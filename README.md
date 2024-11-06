@@ -1,3 +1,6 @@
+# OptimizationFlow
+- **author:`Eric`**
+
 ## 需求
 ```mermaid
 graph LR;
@@ -17,21 +20,21 @@ D --> |掃描barcode|E
 ## 技術
 ```mermaid
 graph LR;
-subgraph "網站"
+subgraph "流程優化網站"
     B
     E
     F
 end
 
 A[成品部]
-B[barcode網站]
+B[資料處理網站]
 C[資料庫]
 D[生產負責]
-E[流程網站A<br>顯示]
-F[流程網站B]
+E[流程網站B<br>顯示資料]
+F[流程網站A<br>顯示資料]
 G[印製機]
 
-A-->|生產文件|B
+A-->|生產文件上傳|B
 B-->|輸入資料|C
 D-->|掃描barcord|E
 D-->|掃描barcord|F
@@ -48,9 +51,6 @@ C-->|印製|G
 ```
 command + k ,v
 ```
-# OptimizationFlow
-- **author:`Eric`**
-
 
 # 開發環境
 Herd(PHP)
@@ -66,17 +66,14 @@ composer require ramsey/uuid
 # commit 規範
 ```
 Message Header: <type>(<scope>): <subject>
-type（必要）：commit 的類別
-如：feat, fix, docs, style, refactor, test, chore
-scope（可選）：commit 影響的範圍
-如：資料庫、控制層、模板層等，視專案不同改變
-subject（必要）：commit 的簡短描述
-不超過 50 個字元
-結尾不加句號
-盡量讓 Commit 單一化，一次只更動一個主題
 ```
+*   type（必要）：commit 的類別，如：feat(建立), fix(修改), docs, style, refactor, test, chore
+*   scope（可選）：commit 影響的範圍，如：資料庫、控制層、模板層等，視專案不同改變
+*   subject（必要）：commit 的簡短描述，不超過 50 個字元，結尾不加句號
 
-[MySQL](https://note.drx.tw/2012/12/mysql-syntax.html)
+
+
+# [MySQL](https://note.drx.tw/2012/12/mysql-syntax.html)
 ```
 常用資料庫資料型態
 1. INT (整數)
