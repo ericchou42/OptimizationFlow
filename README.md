@@ -1,31 +1,45 @@
 # OptimizationFlow
 - **author:`Eric`**
 
-## 需求
+## 需求流程(擬定)
 ```mermaid
 graph LR;
 
-A[產品投入]
-B[清洗機<br>清洗]
-C[脫油機<br>脫油]
+A[成品部]
+B[作業員]
+C[製成]
 D[秤重]
-E[列印標籤]
+E[完成]
+F[改善流程系統]
+G[改善流程系統]
 
-
-A --> |列印barcode|B
-B --> |掃描barcode|C
-C --> |掃描barcode|D
-D --> |掃描barcode|E
+A --> |提供工單資料|B
+A --> |提供工單資料|F
+F --> |印製barcode|B
+B --> |依照工單施作|C
+C --> |交給作業員秤重|D
+D --> |填寫秤重資料|E
+D --> |上傳秤重資料|G
+G --> |印製barcode|E
 ```
-## 技術
+
+* 待確認
+1. 最初的工單如何交付
+2. 確認工單加入流程
+3. 確認製作品項的種類，以便數量換算
+4. 確認重量單位
+5. 確認工單上資料"HSF"
+* 11/11上午9點在上達
+1. 確認秤重的方式
+2. RS232接收
+## 技術流程
 ```mermaid
-graph LR;
+graph LR
 subgraph "流程優化網站"
     B
     E
     F
 end
-
 A[成品部]
 B[資料處理網站]
 C[資料庫]
@@ -42,6 +56,27 @@ F<-->|更新資料<br>回傳資料|C
 E<-->|更新資料<br>回傳資料|C
 C-->|印製|G
 ```
+
+
+
+## 資料表
+|欄位名稱|型態|Null|限制|說明|備註|範例|初始批次匯入|條碼輸入|
+|-|-|-|-|-|-|-|-|-|
+|date|TIMESTAMP|N||日期|電腦日期|2024/11/7|V
+|productionUnit|VARCHAR(20)|N||生產單位||MM523|V
+|carPlatform|VARCHAR(20)|N||車台||B01|V
+|process|INT|N||工序||10|V
+|carModification|VARCHAR(20)|N||改車人員||002402|V
+|carAttendant|VARCHAR(20)|N||顧車人員||002402|V
+|unitWeight|FLOAT(10,3)|Y||單重|輸入品名、車台編號自動帶入|370||
+|netWeight|FLOAT(10,3)|Y||淨重|磅秤輸入
+|quantity|INT|Y||數量|自動帶入|||V
+|operator|VARCHAR(20)|N||作業員||003826|V
+|boxes|INT|N||箱數||1|V
+|continue|VARCHAR(20)|N||後續單位||加工|V
+|hsf||Y||HSF|內定HSF，特殊選
+|exception|VARCHAR(20)|Y||異常品|有異常再輸入、列印紅字|異常品||V
+
 ```
 使用說明：換行<br>、直式TD
 ```
