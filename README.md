@@ -32,11 +32,9 @@ B[師父]
 C[秤重]
 D[資材]
 E[P1<br>生管排程<br>輸入工單]
-F[P2<br>列印標籤-重印]
 G[P3<br>讀重量]
-subgraph "流程優化網站"
+subgraph "流程優化"
     G
-    F
     E
 end
 A --> B
@@ -165,3 +163,37 @@ Message Header: <type>(<scope>): <subject>
 3. VARCHAR (不超過255字元不定長度字串)
 4. TEXT (不定長度字串最多65535字元)
 ```
+
+
+## app.py
+
+```
+pip install Flask-SQLAlchemy
+pip install pymysql
+```
+
+## usb_monitor.py
+```
+pip install Flask pyusb requests
+brew install libusb
+
+```
+## 發api確認
+```
+curl -X POST -H "Content-Type: application/json" -d '{"data": "USB input data here"}' http://127.0.0.1:5000/usb_data
+```
+
+## python pip 路徑注意事項
+```
+pip安裝路徑
+pip show pip
+```
+
+# 建立虛擬環境
+python3.8 -m venv .venv
+
+# 啟動 (Linux / macOS)
+source .venv/bin/activate
+
+# 離開
+deactivate
