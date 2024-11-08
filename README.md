@@ -1,6 +1,52 @@
 # OptimizationFlow
 - **author:`Eric`**
 
+## 原本流程()
+```mermaid
+graph LR;
+
+B[生管]
+C[Excel]
+D[助理、車助]
+E[Run card]
+F[師父]
+G[車台]
+H[秤重]
+I[新標籤]
+J[資材]
+B --> |生管排程|C
+C --> D
+D --> |寫|E
+E --> |交給|F
+F --> G
+G --> H
+H --> |手寫|I
+I --> J
+```
+
+## 需求流程(擬定)
+```mermaid
+graph LR;
+A[生管]
+B[師父]
+C[秤重]
+D[資材]
+E[P1<br>生管排程<br>輸入工單]
+F[P2<br>列印標籤-重印]
+G[P3<br>讀重量]
+subgraph "流程優化網站"
+    G
+    F
+    E
+end
+A --> B
+B --> C
+C --> D
+
+E <--> A
+C <--> G
+```
+
 ## 需求流程(擬定)
 ```mermaid
 graph LR;
@@ -40,7 +86,7 @@ subgraph "流程優化網站"
     E
     F
 end
-A[成品部]
+A[生管]
 B[資料處理網站]
 C[資料庫]
 D[生產負責]
@@ -69,8 +115,8 @@ C-->|印製|G
 |carModification|VARCHAR(20)|N||改車人員||002402|V
 |carAttendant|VARCHAR(20)|N||顧車人員||002402|V
 |unitWeight|FLOAT(10,3)|Y||單重|輸入品名、車台編號自動帶入|370||
-|netWeight|FLOAT(10,3)|Y||淨重|磅秤輸入
-|quantity|INT|Y||數量|自動帶入|||V
+|netWeight|FLOAT(10,3)|Y||淨重|磅秤輸入|||V
+|quantity|INT|Y||數量|換算自動帶入|||
 |operator|VARCHAR(20)|N||作業員||003826|V
 |boxes|INT|N||箱數||1|V
 |continue|VARCHAR(20)|N||後續單位||加工|V
@@ -88,13 +134,16 @@ command + k ,v
 ```
 
 # 開發環境
-Herd(PHP)
-DBngin(MySQL)TablePles
-
+* Herd(PHP)
+* DBngin(MySQL)
+* TablePles
+* 套件使用
+1. 上傳execl
 ```
-// 上傳execl
 composer require phpoffice/phpspreadsheet
-// 使用UUID
+```
+2. 使用UUID
+```
 composer require ramsey/uuid
 ```
 
