@@ -101,7 +101,10 @@ E<-->|更新資料<br>回傳資料|C
 C-->|印製|G
 ```
 
-
+相關設備規格
+標籤機：zebra ZT610
+barcode設計程式：ZebraDesigner
+barcode估格：GS1-128
 
 ## 資料表
 |欄位名稱|型態|Null|限制|說明|備註|範例|初始批次匯入|條碼輸入|
@@ -197,3 +200,10 @@ source .venv/bin/activate
 
 # 離開
 deactivate
+
+# kivy教學
+https://www.youtube.com/watch?v=3x9jx29hA68
+https://www2.nkust.edu.tw/~shanhuen/PythonTutorialHtml/Kivy.html
+
+## Zebra 控制規則
+https://support.zebra.com/cpws/docs/zpl/zpl_Exercises.pdf
